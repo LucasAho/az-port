@@ -18,7 +18,7 @@ module.exports = {
                     sentence: "You talk too much."
                 }
             )
-            .then(dbModel => res.send('Database seeded! Like your mom!!'))
+            .then(dbModel => res.send('Database seeded!'))
             .catch(err => res.status(422).json(err));
     },
     findAll: function (req, res) {

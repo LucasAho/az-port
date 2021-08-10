@@ -7,13 +7,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(express.static('./client/az-react/build/'));
 
 const words_route = require("./server/routes/words-route");
 words_route(app);
 
-app.get('/*', (req,res) => {
-    res.sendFile('index.html', { root: __dirname + "/client/az-react/build/" });
+app.use(express.static("client/az-react/build"));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 });
 
 const {PORT} = process.env;

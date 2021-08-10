@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd client/az-react && npm && npm run build && cd ../.. && node server",
+    "dev": "node server"
   },
   "keywords": [],
   "author": "Lucas Aho",
