@@ -8,17 +8,18 @@ const path = require("path");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.static("/client/az-react/build/"));
 
 
 const words_route = require("./server/routes/words-route");
 words_route(app);
 
 if (process.env.NODE_ENV === 'production') {
+    app.use(__dirname, express.static("../client/az-react/build"));
+    
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+        res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
     });
 }
 
-const {PORT} = process.env;
+const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Broadcasting from port ${PORT}`));
