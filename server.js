@@ -8,7 +8,7 @@ const path = require("path");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.static("/client/az-react/build"));
+app.use(express.static("/client/az-react/build/")));
 
 const words_route = require("./server/routes/words-route");
 words_route(app);
