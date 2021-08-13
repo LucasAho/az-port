@@ -8,19 +8,6 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
-    seed: function (req, res) {
-        db.WordModel
-            .create(
-                {
-                    conlang: "Tuk",
-                    english: "Talk",
-                    pos: "Verb",
-                    sentence: "You talk too much."
-                }
-            )
-            .then(dbModel => res.send('Database seeded!'))
-            .catch(err => res.status(422).json(err));
-    },
     findAll: function (req, res) {
         db.WordModel
             .find({})

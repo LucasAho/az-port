@@ -1,54 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
-import axios from 'axios';
 
-class App extends Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      words: []
-    }
-  }
-  
-  componentDidMount() {
-    axios
-      .get('/api/wordlist/tukren/')
-      .then(res => this.setState({ words: res.data }))
-      .catch(alert);
-  }
+import TukrenDocs from './components/ContentPages/TukrenDocs';
+import HomePage from "./components/LandingPages/HomePage";
+import MaalimaPage from "./components/LandingPages/MaalimaHome";
+import PortfolioPage from "./components/LandingPages/Portfolio";
 
-  render() {
-    const { words } = this.state;
-
-    return (
-      <div className="App">
-        <button onClick={this.seedWords}>Seed Words</button>
-        <button onClick={this.deleteWords}>Delete Words</button>
-
-        <ul>
-          {words.map(wordModel => (
-            <li key={wordModel._id}>
-              {wordModel.conlang}
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
-
-  seedWords = () => {
-    const doSeed = window.confirm('Seed data');
-    if (!doSeed) return;
-    axios
-      .post('/api/wordlist/tukren/seed', {})
-      .then(() => {
-        axios
-          .get('/api/wordlist/tukren')
-          .then(res => this.setState({ words: res.data }))
-          .catch(alert);
-      })
-      .catch(alert);
-  }
+function App(){
+  return (
+    <Router>
+        <Switch>
+          <Route exact path="/" component={HomePage}/>
+          <Route exact path="/maalima" component={MaalimaPage}/>
+          <Route exact path="/portfolio" component={PortfolioPage}/>
+          <Route exact path="/maalima/tukren" component={TukrenDocs}/>
+        </Switch>
+      </Router>
+  );
 }
 
 export default App;

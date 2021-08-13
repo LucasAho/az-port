@@ -1,4 +1,4 @@
 module.exports = {
-    BlogPost: require("./essays"),
+    EssayModel: require("./essays"),
     WordModel: require("./words")
 }
