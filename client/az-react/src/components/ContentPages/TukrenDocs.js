@@ -4,11 +4,16 @@ import API from "../../utils/api";
 
 import Navbar from '../Menus/Navbar';
 import Footer from '../Menus/Footer';
+import ToCMenu from "../TukrenComponents/ToCMenu";
+import PhonologyTables from "../TukrenComponents/PhonologyTables";
 
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import Divider from "@material-ui/core/Divider";
 
+import { Element } from "react-scroll";
+import DictionaryTable from "../TukrenComponents/DictionaryTable";
 
 class TukrenDocs extends Component {
     render() {
@@ -20,16 +25,50 @@ class TukrenDocs extends Component {
                 />
                 <Grid container>
                     <Grid sm={10}>
-                        <Typography align="center" variant="h3">
+                        <Typography align="center" variant="h2">
                             Voice of Stone - a Guide for Proto-Tukren
                         </Typography>
-                        <Typography variant="p">
-                            Tukren, tongue of stone, is a fictional, naturalistic constructed language designed for the Rohīren people of the planet Maalima. This is the first of my constructed languages and is currently the most developed. 
-                            The dialect of Tukren spoken by the ethnic Hībord in my novels will be an offshoot of this language, developed in the blending of proto-Tukren and the language of the neighboring Hanatu people. 
-                        </Typography>
+                        <Divider/>
+                        <Element id='tukIntro' name='tukIntro'>
+                            <Typography align="center" variant="h3">
+                                Introduction
+                            </Typography>
+                        </Element>
+                        <Element id='tukPhon' name='tukPhon'>
+                            <Typography align="center" variant="h3">
+                                Phonology
+                            </Typography>
+                        </Element>
+                        <PhonologyTables/>
+                        <Element id='tukSyntax' name='tukSyntax'>
+                            <Typography align="center" variant="h3">
+                                Syntax
+                            </Typography>
+                        </Element>
+                        <Element id='tukMorph' name='tukMorph'>
+                            <Typography align="center" variant="h3">
+                                Morphology
+                            </Typography>
+                        </Element>
+                        <Element id='tukNum' name='tukNum'>
+                            <Typography align="center" variant="h3">
+                                Numbers
+                            </Typography>
+                        </Element>
+                        <Element id='tukOrth' name='tukOrth'>
+                            <Typography align="center" variant="h3">
+                                Orthography
+                            </Typography>
+                        </Element>
+                        <Element id='tukDict' name='tukDict'>
+                            <Typography align="center" variant="h3">
+                                Dictionary
+                            </Typography>
+                            <DictionaryTable/>
+                        </Element>
                     </Grid>
                     <Grid sm={2}>
-
+                        <ToCMenu/>
                     </Grid>
                 </Grid>
                 

@@ -29,7 +29,7 @@ export default function Navbar(props) {
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
-                    <Typography className={classes.title} variant="h5" noWrap>
+                    <Typography className={classes.title} variant="h4" noWrap>
                         Creative Spectrum
                     </Typography>
                     <IconButton
@@ -44,15 +44,6 @@ export default function Navbar(props) {
                     <IconButton
                         aria-label="Maalima Nav"
                         aria-controls="wbMenu-appbar"
-                        color="inherit"
-                    >
-                        <Typography className={classes.title} variant="h6" noWrap>
-                            {props.second}
-                        </Typography>
-                    </IconButton>
-                    <IconButton
-                        aria-label="Portfolio Nav"
-                        aria-controls="portMenu-appbar"
                         color="inherit"
                     >
                         <Typography className={classes.title} variant="h6" noWrap>

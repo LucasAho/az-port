@@ -27,7 +27,6 @@ export default function FeaturedPost() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <Typography variant='h4' className={classes.title} align='center'>Featured Post</Typography>
             <Card className={classes.card}>
                 <CardActionArea>
                     <CardMedia

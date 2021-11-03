@@ -24,11 +24,10 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function RecentPosts() {
+export default function OldFeaturedPosts() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <Typography variant='h5' align='center' className={classes.title}>Most Recent</Typography>
             <Card className={classes.card}>
                 <CardActionArea>
                     <CardMedia

@@ -9,6 +9,9 @@ const theme = createTheme({
             main: "#2E8CA3" 
         },
     },
+    typography: {
+        fontSize: 12
+    }
 });
 
 export default theme;

@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+// Takes arguments: title & color
 export default function HomePageSection(props) {
     const classes = useStyles();
     const { color, textColor } = props;

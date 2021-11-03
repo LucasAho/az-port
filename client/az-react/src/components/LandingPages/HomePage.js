@@ -6,7 +6,7 @@ import Navbar from '../Menus/Navbar';
 import Footer from '../Menus/Footer';
 
 import HomePageSection from '../HomeComponents/HomePageSection';
-import RecentPosts from '../HomeComponents/RecentPosts';
+import OldFeaturedPosts from '../HomeComponents/OldFeaturedPosts';
 import FeaturedPost from "../HomeComponents/FeaturedPost";
 
 import Container from '@material-ui/core/Container';
@@ -26,25 +26,17 @@ class CompileHome extends Component {
                         <FeaturedPost/>
                     </Grid>
                     <Grid item sm={4}>
-                        <RecentPosts/>
+                        <OldFeaturedPosts/>
                     </Grid>
+                    <HomePageSection
+                        title = "Recent Wiki Articles"
+                        color = "purple"
+                    />
+                    <HomePageSection
+                        title = "Recent Blog Posts"
+                        color = { null }
+                    />
                 </Grid>
-                <HomePageSection
-                    title="Hiking"
-                    color="purple"
-                />
-                <HomePageSection
-                    title="Poetry"
-                    color={null}
-                />
-                <HomePageSection
-                    title="Essays"
-                    color="purple"
-                />
-                <HomePageSection
-                    title="Short Stories"
-                    color={null}
-                />
                 <Footer/>
             </Container>
         )
