@@ -14,6 +14,7 @@ import Divider from "@material-ui/core/Divider";
 
 import { Element } from "react-scroll";
 import DictionaryTable from "../TukrenComponents/DictionaryTable";
+import CreateWord from "../TukrenComponents/CreateWord";
 
 class TukrenDocs extends Component {
     render() {
@@ -61,6 +62,11 @@ class TukrenDocs extends Component {
                             </Typography>
                         </Element>
                         <Element id='tukDict' name='tukDict'>
+                            <Grid container>
+                                {/*<Grid sm={6}>
+                                    <CreateWord/>
+        </Grid> */}
+                            </Grid>
                             <Typography align="center" variant="h3">
                                 Dictionary
                             </Typography>

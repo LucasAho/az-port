@@ -7,6 +7,11 @@ const WordSchema = new Schema({
         trim: true,
         required: true
     },
+    language: {
+        type: String,
+        trim: true,
+        default: "Tukren"
+    },
     english: {
         type: String,
         trim: true,
@@ -24,7 +29,7 @@ const WordSchema = new Schema({
     created_at: { type: Date, default: Date.now }
 });
 
-const WordModel = mongoose.model("Words", WordSchema);
+const WordModel = mongoose.model("word", WordSchema);
 
 
 module.exports = WordModel;
